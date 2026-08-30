@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#f7c4d2">
+  <meta name="description" content="365 дней любви ❤️">
+
+  <title>365 дней любви ❤️</title>
+
+  <!-- Романтические шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #f5a9c0;
+      --pink-dark: #c95c82;
+      --peach: #ffd0bc;
+      --lavender: #d8c6f3;
+      --purple: #a988cf;
+      --cream: #fff9f8;
+      --text: #704b5d;
+
+      --glass: rgba(255, 255, 255, 0.58);
+      --border: rgba(255, 255, 255, 0.75);
+
+      --shadow:
+        0 18px 45px rgba(130, 73, 105, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      color: var(--text);
+      font-family: "Playfair Display", serif;
+
+      background:
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(255,255,255,.7),
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 85% 80%,
+          rgba(255,255,255,.55),
+          transparent 25%
+        ),
+        linear-gradient(
+          135deg,
+          #ffd9dc 0%,
+          #ffe1ce 43%,
+          #e6d8f7 100%
+        );
+    }
+
+    /* =========================================
+       ЛЕТАЮЩИЕ СЕРДЕЧКИ
+       ========================================= */
+
+    .hearts {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -60px;
+
+      color: rgba(218, 91, 132, .35);
+
+      animation:
+        floatHeart linear infinite;
+
+      user-select: none;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform:
+          translateY(0)
+          translateX(0)
+          rotate(0deg)
+          scale(.8);
+
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: .8;
+      }
+
+      100% {
+        transform:
+          translateY(-115vh)
+          translateX(80px)
+          rotate(360deg)
+          scale(1.3);
+
+        opacity: 0;
+      }
+    }
+
+    /* =========================================
+       ОСНОВНОЙ КОНТЕНТ
+       ========================================= */
+
+    main {
+      position: relative;
+      z-index: 1;
+
+      width: min(900px, 92%);
+      margin: 0 auto;
+
+      padding:
+        55px
+        0
+        30px;
+
+      text-align: center;
+    }
+
+    /* =========================================
+       ГЛАВНОЕ СЕРДЦЕ
+       ========================================= */
+
+    .main-heart {
+      display: inline-block;
+
+      font-size:
+        clamp(
+          85px,
+          17vw,
+          145px
+        );
+
+      line-height: 1;
+
+      margin-bottom: 12px;
+
+      animation:
+        heartbeat 1.4s ease-in-out infinite,
+        heartGlow 2s ease-in-out infinite alternate;
+
+      filter:
+        drop-shadow(
+          0 15px 25px
+          rgba(200, 70, 115, .25)
+        );
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      15% {
+        transform: scale(1.17);
+      }
+
+      30% {
+        transform: scale(1);
+      }
+
+      45% {
+        transform: scale(1.1);
+      }
+
+      60% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes heartGlow {
+      from {
+        filter:
+          drop-shadow(
+            0 10px 18px
+            rgba(210, 75, 120, .2)
+          );
+      }
+
+      to {
+        filter:
+          drop-shadow(
+            0 10px 35px
+            rgba(230, 75, 130, .55)
+          );
+      }
+    }
+
+    h1 {
+      margin: 0 auto 12px;
+
+      max-width: 800px;
+
+      font-family: "Pacifico", cursive;
+      font-size: clamp(32px, 6vw, 58px);
+      font-weight: 400;
+      line-height: 1.25;
+
+      color: #b34d76;
+
+      text-shadow:
+        2px 3px 0 rgba(255,255,255,.55);
+    }
+
+    .subtitle {
+      margin:
+        0 auto
+        35px;
+
+      font-size:
+        clamp(
+          16px,
+          3vw,
+          21px
+        );
+
+      opacity: .8;
+    }
+
+    /* =========================================
+       СЧЁТЧИКИ
+       ========================================= */
+
+    .counters {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+
+      margin-bottom: 25px;
+    }
+
+    .counter-card {
+      width: 290px;
+
+      padding:
+        25px
+        25px
+        22px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 30px;
+
+      background:
+        var(--glass);
+
+      backdrop-filter:
+        blur(14px);
+
+      box-shadow:
+        var(--shadow);
+    }
+
+    .counter-button {
+      width: 100%;
+
+      border: none;
+      border-radius: 22px;
+
+      padding:
+        18px
+        25px;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e990ad,
+          #d76990
+        );
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 21px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 9px 20px
+        rgba(190, 75, 115, .25);
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .counter-card:nth-child(2)
+    .counter-button {
+      background:
+        linear-gradient(
+          135deg,
+          #d4b8ee,
+          #a989d3
+        );
+    }
+
+    .counter-button:hover {
+      transform:
+        translateY(-4px)
+        scale(1.02);
+
+      box-shadow:
+        0 14px 27px
+        rgba(190, 75, 115, .3);
+    }
+
+    .counter-button:active {
+      transform:
+        translateY(1px)
+        scale(.97);
+    }
+
+    .count {
+      display: block;
+
+      margin-top: 13px;
+
+      font-family:
+        "Pacifico",
+        cursive;
+
+      font-size: 40px;
+
+      color: #a94d73;
+    }
+
+    .counter-label {
+      display: block;
+
+      margin-top: 2px;
+
+      font-size: 13px;
+
+      opacity: .65;
+    }
+
+    /* =========================================
+       ФРАЗЫ
+       ========================================= */
+
+    .message-box {
+      min-height: 95px;
+
+      margin:
+        25px auto
+        40px;
+
+      padding:
+        22px
+        28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 27px;
+
+      background:
+        rgba(255,255,255,.5);
+
+      backdrop-filter:
+        blur(12px);
+
+      box-shadow:
+        var(--shadow);
+    }
+
+    #message {
+      margin: 0;
+
+      font-family:
+        "Pacifico",
+        cursive;
+
+      font-size:
+        clamp(
+          20px,
+          4vw,
+          29px
+        );
+
+      color: #a94d73;
+    }
+
+    .message-animation {
+      animation:
+        messageIn .6s ease both;
+    }
+
+    @keyframes messageIn {
+      from {
+        opacity: 0;
+        transform:
+          translateY(15px)
+          scale(.96);
+      }
+
+      to {
+        opacity: 1;
+        transform:
+          translateY(0)
+          scale(1);
+      }
+    }
+
+    /* =========================================
+       МУЗЫКАЛЬНЫЙ ПЛЕЕР
+       ========================================= */
+
+    .music-player {
+      position: relative;
+
+      max-width: 680px;
+
+      margin:
+        0 auto
+        45px;
+
+      padding:
+        20px 22px;
+
+      display: grid;
+
+      grid-template-columns:
+        auto
+        1fr
+        auto;
+
+      grid-template-rows:
+        auto
+        auto
+        auto;
+
+      column-gap: 15px;
+
+      align-items: center;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 30px;
+
+      background:
+        rgba(255,255,255,.57);
+
+      backdrop-filter:
+        blur(15px);
+
+      box-shadow:
+        var(--shadow);
+    }
+
+    .music-icon {
+      width: 57px;
+      height: 57px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #f5b1c5,
+          #cdb5eb
+        );
+
+      font-size: 28px;
+
+      animation:
+        musicPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes musicPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+    }
+
+    .music-info {
+      text-align: left;
+    }
+
+    .music-title {
+      font-family:
+        "Pacifico",
+        cursive;
+
+      font-size: 20px;
+
+      color: #a94d73;
+    }
+
+    .music-subtitle {
+      margin-top: 3px;
+
+      font-size: 13px;
+
+      opacity: .65;
+    }
+
+    .play-button {
+      width: 57px;
+      height: 57px;
+
+      border: none;
+      border-radius: 50%;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e88aaa,
+          #d96b91
+        );
+
+      font-size: 20px;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 8px 18px
+        rgba(190, 75, 115, .25);
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .play-button:hover {
+      transform: scale(1.08);
+
+      box-shadow:
+        0 12px 24px
+        rgba(190, 75, 115, .35);
+    }
+
+    .play-button:active {
+      transform: scale(.94);
+    }
+
+    .progress-container {
+      grid-column: 1 / 4;
+
+      height: 7px;
+
+      margin-top: 18px;
+
+      overflow: hidden;
+
+      border-radius: 10px;
+
+      background:
+        rgba(170, 120, 155, .18);
+
+      cursor: pointer;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+
+      border-radius: inherit;
+
+      background:
+        linear-gradient(
+          90deg,
+          #e88aaa,
+          #c7a5e8
+        );
+    }
+
+    .time {
+      grid-column: 1 / 4;
+
+      display: flex;
+      justify-content: space-between;
+
+      margin-top: 5px;
+
+      font-size: 11px;
+
+      opacity: .55;
+    }
+
+    /* =========================================
+       ФОТОГРАФИИ
+       ========================================= */
+
+    .photos-title {
+      margin:
+        10px 0
+        22px;
+
+      font-family:
+        "Pacifico",
+        cursive;
+
+      font-size: 30px;
+
+      color: #a94d73;
+    }
+
+    .photos {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 22px;
+
+      margin-bottom: 55px;
+    }
+
+    .photo-card {
+      position: relative;
+
+      aspect-ratio: 4 / 5;
+
+      overflow: hidden;
+
+      border:
+        7px solid
+        rgba(255,255,255,.85);
+
+      border-radius:
+        45% 45%
+        38% 38%
+        /
+        35% 35%
+        50% 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffc8d2,
+          #d9c7f2
+        );
+
+      box-shadow:
+        0 16px 32px
+        rgba(125, 77, 105, .2);
+
+      transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+    }
+
+    .photo-card:hover {
+      transform:
+        translateY(-8px)
+        rotate(1deg);
+
+      box-shadow:
+        0 23px 40px
+        rgba(125, 77, 105, .28);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+    }
+
+    /* =========================================
+       ПОДПИСЬ
+       ========================================= */
+
+    footer {
+      padding:
+        20px
+        0
+        35px;
+
+      font-family:
+        "Pacifico",
+        cursive;
+
+      font-size: 22px;
+
+      color: #a94d73;
+    }
+
+    footer .heart-footer {
+      display: inline-block;
+
+      animation:
+        tinyHeart 1.5s
+        ease-in-out
+        infinite;
+    }
+
+    @keyframes tinyHeart {
+      50% {
+        transform: scale(1.3);
+      }
+    }
+
+    /* =========================================
+       СБРОС
+       ========================================= */
+
+    .reset-button {
+      position: fixed;
+
+      right: 10px;
+      bottom: 8px;
+
+      z-index: 20;
+
+      border: none;
+
+      background: transparent;
+
+      color:
+        rgba(100,70,85,.3);
+
+      font-size: 10px;
+
+      cursor: pointer;
+    }
+
+    .reset-button:hover {
+      color:
+        rgba(100,70,85,.7);
+    }
+
+    /* =========================================
+       СЕРДЕЧКО ПРИ НАЖАТИИ
+       ========================================= */
+
+    .click-heart {
+      position: fixed;
+
+      z-index: 100;
+
+      pointer-events: none;
+
+      font-size: 28px;
+    }
+
+    /* =========================================
+       МОБИЛЬНЫЕ
+       ========================================= */
+
+    @media (max-width: 650px) {
+
+      main {
+        padding-top: 35px;
+      }
+
+      .counters {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .counter-card {
+        width: 100%;
+      }
+
+      .photos {
+        grid-template-columns: 1fr;
+
+        max-width: 330px;
+
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .photo-card {
+        aspect-ratio: 5 / 4;
+
+        border-radius: 38px;
+      }
+
+      .message-box {
+        padding: 20px;
+      }
+
+      .music-player {
+        padding: 17px;
+
+        column-gap: 10px;
+      }
+
+      .music-icon,
+      .play-button {
+        width: 49px;
+        height: 49px;
+      }
+
+      .music-title {
+        font-size: 17px;
+      }
+
+      .music-subtitle {
+        font-size: 11px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================================
+       ЛЕТАЮЩИЕ СЕРДЕЧКИ
+       ======================================== -->
+
+  <div class="hearts" id="hearts"></div>
+
+
+  <main>
+
+    <!-- ======================================
+         ГЛАВНОЕ СЕРДЦЕ
+         ====================================== -->
+
+    <div class="main-heart">
+      ❤️
+    </div>
+
+
+    <!-- ======================================
+         ЗАГОЛОВОК
+
+         МЕНЯЙ ЧИСЛО ЗДЕСЬ:
+         const LOVE_DAYS = 365;
+         ====================================== -->
+
+    <h1>
+      Люблю тебя уже
+      <span id="days">365</span>
+      дней
+    </h1>
+
+    <p class="subtitle">
+      И с каждым днём люблю тебя ещё сильнее 💕
+    </p>
+
+
+    <!-- ======================================
+         СЧЁТЧИКИ
+         ====================================== -->
+
+    <section class="counters">
+
+      <div class="counter-card">
+
+        <button
+          class="counter-button"
+          id="kissButton"
+        >
+          💋 Поцелуи
+        </button>
+
+        <span
+          class="count"
+          id="kissCount"
+        >
+          0
+        </span>
+
+        <span class="counter-label">
+          поцелуев подарено
+        </span>
+
+      </div>
+
+
+      <div class="counter-card">
+
+        <button
+          class="counter-button"
+          id="hugButton"
+        >
+          🤗 Объятия
+        </button>
+
+        <span
+          class="count"
+          id="hugCount"
+        >
+          0
+        </span>
+
+        <span class="counter-label">
+          объятий подарено
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         ЛАСКОВАЯ ФРАЗА
+         ====================================== -->
+
+    <section class="message-box">
+
+      <p id="message">
+        Нажми на любую кнопку,
+        чтобы получить признание 💗
+      </p>
+
+    </section>
+
+
+    <!-- ======================================
+         МУЗЫКАЛЬНЫЙ ПЛЕЕР
+
+         ФАЙЛ:
+         music/our-song.mp3
+         ====================================== -->
+
+    <section class="music-player">
+
+      <div class="music-icon">
+        🎵
+      </div>
+
+      <div class="music-info">
+
+        <div class="music-title">
+          Наша песня 💕
+        </div>
+
+        <div class="music-subtitle">
+          Музыка для наших моментов
+        </div>
+
+      </div>
+
+      <button
+        class="play-button"
+        id="playButton"
+        aria-label="Воспроизвести музыку"
+      >
+        ▶️
+      </button>
+
+      <audio
+        id="audio"
+        src="music/our-song.mp3"
+        preload="metadata"
+      ></audio>
+
+      <div
+        class="progress-container"
+        id="progressContainer"
+      >
+        <div
+          class="progress-bar"
+          id="progressBar"
+        ></div>
+      </div>
+
+      <div class="time">
+
+        <span id="currentTime">
+          0:00
+        </span>
+
+        <span id="duration">
+          0:00
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         ФОТОГРАФИИ
+
+         ФАЙЛЫ:
+         photos/photo1.jpg
+         photos/photo2.jpg
+         photos/photo3.jpg
+         ====================================== -->
+
+    <h2 class="photos-title">
+      📸 Наши фото
+    </h2>
+
+    <section class="photos">
+
+      <div class="photo-card">
+        <img
+          src="photos/photo1.jpg"
+          alt="Наше первое фото"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="photo-card">
+        <img
+          src="photos/photo2.jpg"
+          alt="Наше фото"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="photo-card">
+        <img
+          src="photos/photo3.jpg"
+          alt="Наше любимое фото"
+          loading="lazy"
+        >
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         ПОДПИСЬ
+         ====================================== -->
+
+    <footer>
+      Сделано с любовью
+      <span class="heart-footer">
+        ❤️
+      </span>
+      специально для нас
+    </footer>
+
+  </main>
+
+
+  <!-- ========================================
+       КНОПКА СБРОСА
+       ======================================== -->
+
+  <button
+    class="reset-button"
+    id="resetButton"
+    title="Сбросить счётчики"
+  >
+    сброс
+  </button>
+
+
+  <script>
+
+    /* ========================================
+       НАСТРОЙКИ
+       ======================================== */
+
+    // ========================================
+    // СКОЛЬКО ДНЕЙ ВЫ ВМЕСТЕ
+    // ========================================
+
+    const LOVE_DAYS = 365;
+
+    document.getElementById("days").textContent =
+      LOVE_DAYS;
+
+
+    /* ========================================
+       ЛАСКОВЫЕ ФРАЗЫ
+       ======================================== */
+
+    const phrases = [
+
+      "Люблю тебя, гадюка! ❤️",
+
+      "Обормот, ты мой родной! 🥰",
+
+      "Гадюка, ты моя ядовитая любовь! 💋",
+
+      "Обормот, обнимаю тебя крепче всех! 🤗",
+
+      "Гадюка, без тебя мне скучно жить! 💕",
+
+      "Мой любимый обормот, иди сюда — обниму! 🫂",
+
+      "Гадюка, ты украла моё сердце! 💘",
+
+      "Обормот, ты самое родное моё счастье! 🌸",
+
+      "Гадюка, я тебя люблю до луны и обратно! 🌙❤️",
+
+      "Обормот, получай миллион виртуальных поцелуев! 💋💋💋",
+
+      "Гадюка моя любимая, ты прекрасна! 🌷",
+
+      "Обормот, рядом с тобой я самый счастливый человек! 🥹",
+
+      "Гадюка, ты моё маленькое большое счастье! 💗",
+
+      "Обормот, держи самое тёплое объятие! 🤗💕",
+
+      "Гадюка, выбираю тебя сегодня, завтра и всегда! 💍❤️"
+
+    ];
+
+
+    /* ========================================
+       ЭЛЕМЕНТЫ
+       ======================================== */
+
+    const kissButton =
+      document.getElementById("kissButton");
+
+    const hugButton =
+      document.getElementById("hugButton");
+
+    const kissCountElement =
+      document.getElementById("kissCount");
+
+    const hugCountElement =
+      document.getElementById("hugCount");
+
+    const messageElement =
+      document.getElementById("message");
+
+    const resetButton =
+      document.getElementById("resetButton");
+
+
+    /* ========================================
+       СЧЁТЧИКИ
+       ======================================== */
+
+    let kisses =
+      Number(
+        localStorage.getItem("love_kisses")
+      ) || 0;
+
+    let hugs =
+      Number(
+        localStorage.getItem("love_hugs")
+      ) || 0;
+
+
+    function updateCounters() {
+
+      kissCountElement.textContent =
+        kisses;
+
+      hugCountElement.textContent =
+        hugs;
+
+    }
+
+
+    updateCounters();
+
+
+    /* ========================================
+       СЛУЧАЙНАЯ ФРАЗА
+       ======================================== */
+
+    let lastPhraseIndex = -1;
+
+
+    function showRandomPhrase() {
+
+      let index;
+
+      do {
+
+        index =
+          Math.floor(
+            Math.random() *
+            phrases.length
+          );
+
+      } while (
+        index === lastPhraseIndex &&
+        phrases.length > 1
+      );
+
+
+      lastPhraseIndex =
+        index;
+
+
+      messageElement.classList.remove(
+        "message-animation"
+      );
+
+
+      // Перезапуск CSS-анимации
+
+      void messageElement.offsetWidth;
+
+
+      messageElement.textContent =
+        phrases[index];
+
+
+      messageElement.classList.add(
+        "message-animation"
+      );
+
+    }
+
+
+    /* ========================================
+       ПОЦЕЛУИ
+       ======================================== */
+
+    kissButton.addEventListener(
+      "click",
+      () => {
+
+        kisses++;
+
+        localStorage.setItem(
+          "love_kisses",
+          kisses
+        );
+
+        updateCounters();
+
+        showRandomPhrase();
+
+        createClickHeart(
+          kissButton
+        );
+
+      }
+    );
+
+
+    /* ========================================
+       ОБЪЯТИЯ
+       ======================================== */
+
+    hugButton.addEventListener(
+      "click",
+      () => {
+
+        hugs++;
+
+        localStorage.setItem(
+          "love_hugs",
+          hugs
+        );
+
+        updateCounters();
+
+        showRandomPhrase();
+
+        createClickHeart(
+          hugButton
+        );
+
+      }
+    );
+
+
+    /* ========================================
+       СБРОС
+       ======================================== */
+
+    resetButton.addEventListener(
+      "click",
+      () => {
+
+        const confirmed =
+          confirm(
+            "Точно обнулить поцелуи и объятия? 💔"
+          );
+
+        if (!confirmed) {
+          return;
+        }
+
+
+        kisses = 0;
+        hugs = 0;
+
+
+        localStorage.setItem(
+          "love_kisses",
+          "0"
+        );
+
+        localStorage.setItem(
+          "love_hugs",
+          "0"
+        );
+
+
+        updateCounters();
+
+
+        messageElement.textContent =
+          "Счётчики снова ждут наших поцелуев и объятий 💕";
+
+      }
+    );
+
+
+    /* ========================================
+       ЛЕТАЮЩИЕ СЕРДЕЧКИ
+       ======================================== */
+
+    const heartsContainer =
+      document.getElementById("hearts");
+
+
+    function createFloatingHeart() {
+
+      const heart =
+        document.createElement("div");
+
+
+      heart.className =
+        "heart";
+
+
+      heart.textContent =
+        Math.random() > .35
+          ? "♥"
+          : "♡";
+
+
+      heart.style.left =
+        Math.random() * 100 + "%";
+
+
+      heart.style.fontSize =
+        12 + Math.random() * 25 + "px";
+
+
+      heart.style.animationDuration =
+        7 + Math.random() * 9 + "s";
+
+
+      heart.style.animationDelay =
+        Math.random() * 4 + "s";
+
+
+      heartsContainer.appendChild(
+        heart
+      );
+
+
+      setTimeout(
+        () => heart.remove(),
+        18000
+      );
+
+    }
+
+
+    // Первые сердечки
+
+    for (
+      let i = 0;
+      i < 18;
+      i++
+    ) {
+
+      createFloatingHeart();
+
+    }
+
+
+    // Новые сердечки
+
+    setInterval(
+      createFloatingHeart,
+      900
+    );
+
+
+    /* ========================================
+       СЕРДЕЧКО ПРИ КЛИКЕ
+       ======================================== */
+
+    function createClickHeart(
+      button
+    ) {
+
+      const rect =
+        button.getBoundingClientRect();
+
+
+      const heart =
+        document.createElement("div");
+
+
+      heart.className =
+        "click-heart";
+
+
+      heart.textContent =
+        Math.random() > .5
+          ? "💗"
+          : "💖";
+
+
+      heart.style.left =
+        rect.left +
+        rect.width / 2 +
+        "px";
+
+
+      heart.style.top =
+        rect.top +
+        "px";
+
+
+      document.body.appendChild(
+        heart
+      );
+
+
+      const animation =
+        heart.animate(
+
+          [
+            {
+              transform:
+                "translate(-50%, 0) scale(.5)",
+
+              opacity: 0
+            },
+
+            {
+              transform:
+                "translate(-50%, -35px) scale(1.2)",
+
+              opacity: 1,
+
+              offset: .35
+            },
+
+            {
+              transform:
+                "translate(-50%, -100px) scale(.8)",
+
+              opacity: 0
+            }
+          ],
+
+          {
+            duration: 850,
+            easing: "ease-out"
+          }
+
+        );
+
+
+      animation.onfinish =
+        () => heart.remove();
+
+    }
+
+
+    /* ========================================
+       МУЗЫКАЛЬНЫЙ ПЛЕЕР
+       ======================================== */
+
+    const audio =
+      document.getElementById("audio");
+
+    const playButton =
+      document.getElementById("playButton");
+
+    const progressBar =
+      document.getElementById("progressBar");
+
+    const progressContainer =
+      document.getElementById(
+        "progressContainer"
+      );
+
+    const currentTimeElement =
+      document.getElementById(
+        "currentTime"
+      );
+
+    const durationElement =
+      document.getElementById(
+        "duration"
+      );
+
+
+    /* ========================================
+       ФОРМАТ ВРЕМЕНИ
+       ======================================== */
+
+    function formatTime(
+      seconds
+    ) {
+
+      if (
+        !Number.isFinite(seconds)
+      ) {
+        return "0:00";
+      }
+
+
+      const minutes =
+        Math.floor(
+          seconds / 60
+        );
+
+
+      const remainingSeconds =
+        Math.floor(
+          seconds % 60
+        );
+
+
+      return (
+        minutes +
+        ":" +
+        String(
+          remainingSeconds
+        ).padStart(2, "0")
+      );
+
+    }
+
+
+    /* ========================================
+       PLAY / PAUSE
+       ======================================== */
+
+    playButton.addEventListener(
+      "click",
+      () => {
+
+        if (audio.paused) {
+
+          audio.play()
+            .then(() => {
+
+              playButton.textContent =
+                "⏸️";
+
+            })
+            .catch(() => {
+
+              alert(
+                "Не удалось воспроизвести музыку. Проверь, что файл music/our-song.mp3 существует."
+              );
+
+            });
+
+        } else {
+
+          audio.pause();
+
+          playButton.textContent =
+            "▶️";
+
+        }
+
+      }
+    );
+
+
+    /* ========================================
+       ПРОГРЕСС
+       ======================================== */
+
+    audio.addEventListener(
+      "timeupdate",
+      () => {
+
+        if (!audio.duration) {
+          return;
+        }
+
+
+        const progress =
+          (
+            audio.currentTime /
+            audio.duration
+          ) * 100;
+
+
+        progressBar.style.width =
+          progress + "%";
+
+
+        currentTimeElement.textContent =
+          formatTime(
+            audio.currentTime
+          );
+
+      }
+    );
+
+
+    /* ========================================
+       ДЛИТЕЛЬНОСТЬ
+       ======================================== */
+
+    audio.addEventListener(
+      "loadedmetadata",
+      () => {
+
+        durationElement.textContent =
+          formatTime(
+            audio.duration
+          );
+
+      }
+    );
+
+
+    /* ========================================
+       ПЕРЕМОТКА
+       ======================================== */
+
+    progressContainer.addEventListener(
+      "click",
+      (event) => {
+
+        if (!audio.duration) {
+          return;
+        }
+
+
+        const rect =
+          progressContainer
+            .getBoundingClientRect();
+
+
+        const clickPosition =
+          event.clientX -
+          rect.left;
+
+
+        const percentage =
+          clickPosition /
+          rect.width;
+
+
+        audio.currentTime =
+          percentage *
+          audio.duration;
+
+      }
+    );
+
+
+    /* ========================================
+       КОНЕЦ ПЕСНИ
+       ======================================== */
+
+    audio.addEventListener(
+      "ended",
+      () => {
+
+        playButton.textContent =
+          "▶️";
+
+        progressBar.style.width =
+          "0%";
+
+        currentTimeElement.textContent =
+          "0:00";
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
